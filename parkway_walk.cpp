@@ -20,14 +20,21 @@ int main() {
     }
 
     int ans = 0;
-    for (int i = 0; i < n - 1; i++) {
-      m -= arr[i];
-      if (arr[i + 1] > m) {
-        int t = arr[i + 1] - m;
-        m += t;
-        ans += t;
+    if (n > 1) {
+      for (int i = 0; i < n - 1; i++) {
+        // if (m < arr[i]) {
+        //   ans += arr[i] - m;
+        //   m = arr[i];
+        // } else
+        m -= arr[i];
+        if (arr[i + 1] > m) {
+          int t = arr[i + 1] - m;
+          m += t;
+          ans += t;
+        }
       }
-    }
+    } else
+      ans = abs(m - arr[0]);
 
     cout << ans << '\n';
   }
