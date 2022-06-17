@@ -19,9 +19,13 @@ int main() {
       if (s[i] != t[i] && i < n - 1) {
         int j = i + 1;
         while (j < n && s[j] == s[i]) j++;
+        cout << "i: " << i << "     "
+             << "j: " << j << '\n';
         if (j < n && s[j] == t[i] && s[j] == s[i] + 1) swap(s[j], s[i]);
+        cout << s << '\n';
       }
     }
+
     if (s == t)
       cout << "YES" << '\n';
     else
